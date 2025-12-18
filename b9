@@ -1,0 +1,41 @@
+- Prompt sử dụng
+- Viết hàm thêm sinh viên mới
+- Viết hàm xóa sinh viên theo ID
+- Thêm docstring cho hai hàm
+- Sinh test case trùng ID và ID không tồn tại
+
+- Kết quả AI sinh ra
+- Hàm thêm sinh viên kiểm tra trùng ID
+- Hàm xóa sinh viên xử lý đúng khi không tìm thấy
+
+int addStudent(struct Student students[], int *n, struct Student newStudent) {
+    for (int i = 0; i < *n; i++) {
+        if (students[i].id == newStudent.id) {
+            return 0;
+        }
+    }
+    students[*n] = newStudent;
+    (*n)++;
+    return 1;
+}
+
+int removeStudentById(struct Student students[], int *n, int id) {
+    int index = -1;
+    for (int i = 0; i < *n; i++) {
+        if (students[i].id == id) {
+            index = i;
+            break;
+        }
+    }
+
+    if (index == -1) return 0;
+
+    for (int i = index; i < *n - 1; i++) {
+        students[i] = students[i + 1];
+    }
+    (*n)--;
+    return 1;
+}
+
+- Test thêm sinh viên trùng ID bị từ chối
+- Test xóa ID không tồn tại trả về lỗi
