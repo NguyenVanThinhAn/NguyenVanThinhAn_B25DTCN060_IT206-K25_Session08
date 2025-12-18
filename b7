@@ -1,0 +1,21 @@
+- Prompt sử dụng
+- Viết hàm sắp xếp theo GPA giảm dần
+- Giải thích logic bubble sort
+- Sinh test case GPA bằng nhau tăng dần ngẫu nhiên
+
+- Kết quả AI sinh ra
+- Sắp xếp đúng thứ tự giảm dần
+
+void sortByGPA(struct Student students[], int n) {
+    for (int i = 0; i < n - 1; i++) {
+        for (int j = i + 1; j < n; j++) {
+            if (students[i].gpa < students[j].gpa) {
+                struct Student temp = students[i];
+                students[i] = students[j];
+                students[j] = temp;
+            }
+        }
+    }
+}
+
+- Kết quả đúng với mọi test case
