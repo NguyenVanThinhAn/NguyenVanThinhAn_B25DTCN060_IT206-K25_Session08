@@ -1,0 +1,48 @@
+- Prompt sử dụng
+- Tạo menu quản lý sinh viên
+- Menu lặp cho đến khi chọn thoát
+- Viết comment cho từng chức năng
+- Giải thích luồng chạy chương trình
+
+- Kết quả AI sinh ra
+- Menu đầy đủ các chức năng
+- Chương trình chạy ổn định
+- Luồng xử lý rõ ràng
+
+#include <stdio.h>
+
+void showMenu() {
+    printf("===== Student Manager =====\n");
+    printf("1. Nhap sinh vien\n");
+    printf("2. In danh sach\n");
+    printf("3. Ghi file\n");
+    printf("4. Doc file\n");
+    printf("5. Tim kiem\n");
+    printf("6. Sap xep\n");
+    printf("7. Them sinh vien\n");
+    printf("8. Xoa sinh vien\n");
+    printf("0. Thoat\n");
+    printf("===========================\n");
+}
+
+int main() {
+    int choice;
+    do {
+        showMenu();
+        printf("Chon chuc nang: ");
+        scanf("%d", &choice);
+
+        switch (choice) {
+            case 0:
+                printf("Thoat chuong trinh\n");
+                break;
+            default:
+                printf("Chuc nang dang phat trien\n");
+        }
+    } while (choice != 0);
+
+    return 0;
+}
+
+- Menu lặp đúng
+- Thoát khi chọn 0
