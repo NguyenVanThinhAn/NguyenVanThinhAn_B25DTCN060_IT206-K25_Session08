@@ -1,0 +1,27 @@
+- Prompt sử dụng
+- Viết hàm đọc dữ liệu từ students.txt vào mảng Student
+- In danh sách ra màn hình
+
+- Kết quả AI sinh ra
+- Đọc file thành công
+- In đúng dữ liệu đã lưu
+
+#include <stdio.h>
+
+int loadFromFile(struct Student students[]) {
+    FILE *f = fopen("students.txt", "r");
+    if (f == NULL) return 0;
+
+    int count = 0;
+    while (fscanf(f, "%d %s %d %f",
+                  &students[count].id,
+                  students[count].name,
+                  &students[count].age,
+                  &students[count].gpa) != EOF) {
+        count++;
+    }
+    fclose(f);
+    return count;
+}
+
+- Kết quả in ra đúng với nội dung file
