@@ -1,0 +1,24 @@
+- Prompt sử dụng
+- Viết hàm saveToFile lưu danh sách sinh viên vào students.txt
+
+- Kết quả AI sinh ra
+- Tạo file students.txt
+- Ghi dữ liệu đúng định dạng
+
+#include <stdio.h>
+
+void saveToFile(struct Student students[], int n) {
+    FILE *f = fopen("students.txt", "w");
+    if (f == NULL) return;
+
+    for (int i = 0; i < n; i++) {
+        fprintf(f, "%d %s %d %.1f\n",
+                students[i].id,
+                students[i].name,
+                students[i].age,
+                students[i].gpa);
+    }
+    fclose(f);
+}
+
+- File được tạo và có dữ liệu đúng
