@@ -1,0 +1,19 @@
+- Prompt sử dụng
+- Viết hàm tính GPA trung bình
+- Sinh 10 sinh viên giả lập
+- Test trường hợp danh sách rỗng
+
+- Kết quả AI sinh ra
+- Hàm tính GPA trung bình chính xác
+- Trường hợp danh sách rỗng trả về 0
+
+float avgGPA(struct Student students[], int n) {
+    if (n == 0) return 0;
+    float sum = 0;
+    for (int i = 0; i < n; i++) {
+        sum += students[i].gpa;
+    }
+    return sum / n;
+}
+
+- GPA trung bình tính đúng
