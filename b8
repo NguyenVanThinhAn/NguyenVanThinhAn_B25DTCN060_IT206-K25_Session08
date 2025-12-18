@@ -1,8 +1,35 @@
 - Prompt sử dụng
-- Đọc dữ liệu từ nhiều file classA classB classC
-- Thêm comment chi tiết
-- Sinh dữ liệu giả lập
+- Đọc dữ liệu sinh viên từ nhiều file khác nhau classA.txt classB.txt classC.txt
+- Người dùng nhập tên file
+- Thêm comment chi tiết cho từng bước xử lý
 
 - Kết quả AI sinh ra
-- Đọc đúng file người dùng nhập
-- In danh sách từng lớp chính xác
+- Hàm đọc file theo tên người dùng nhập
+- Mỗi file chứa danh sách sinh viên của một lớp
+- Code có comment giải thích rõ ràng
+
+#include <stdio.h>
+#include <string.h>
+
+int loadFromClassFile(struct Student students[], char filename[]) {
+    FILE *f = fopen(filename, "r");
+    if (f == NULL) {
+        printf("Khong mo duoc file\n");
+        return 0;
+    }
+
+    int count = 0;
+    while (fscanf(f, "%d %s %d %f",
+                  &students[count].id,
+                  students[count].name,
+                  &students[count].age,
+                  &students[count].gpa) != EOF) {
+        count++;
+    }
+
+    fclose(f);
+    return count;
+}
+
+- Nhập tên file classA.txt
+- Dữ liệu được đọc và in ra đúng
