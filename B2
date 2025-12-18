@@ -1,0 +1,45 @@
+- Prompt sử dụng
+- Bổ sung chức năng nhập tối đa 5 sinh viên từ bàn phím
+- In danh sách sinh viên sau khi nhập
+
+- Kết quả AI sinh ra
+- Thêm hàm nhập danh sách sinh viên
+- Cho phép nhập số lượng sinh viên
+- In ra bảng đúng định dạng
+
+#include <stdio.h>
+
+struct Student {
+    int id;
+    char name[50];
+    int age;
+    float gpa;
+};
+
+int main() {
+    struct Student students[5];
+    int n;
+
+    printf("Nhap so sinh vien: ");
+    scanf("%d", &n);
+
+    for (int i = 0; i < n; i++) {
+        scanf("%d %s %d %f",
+              &students[i].id,
+              students[i].name,
+              &students[i].age,
+              &students[i].gpa);
+    }
+
+    printf("ID   Name   Age   GPA\n");
+    for (int i = 0; i < n; i++) {
+        printf("%-4d %-6s %-5d %.1f\n",
+               students[i].id,
+               students[i].name,
+               students[i].age,
+               students[i].gpa);
+    }
+    return 0;
+}
+
+- Nhập và xuất danh sách thành công
