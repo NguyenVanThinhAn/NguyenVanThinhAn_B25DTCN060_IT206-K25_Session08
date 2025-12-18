@@ -1,0 +1,20 @@
+- Prompt sử dụng
+- Bổ sung hàm tìm kiếm sinh viên theo ID
+- Thêm docstring
+- Sinh test case ID tồn tại không tồn tại âm
+
+- Kết quả AI sinh ra
+- Hàm tìm kiếm theo ID
+- Trả về đúng kết quả
+
+int findStudentById(struct Student students[], int n, int id) {
+    for (int i = 0; i < n; i++) {
+        if (students[i].id == id)
+            return i;
+    }
+    return -1;
+}
+
+- Test case ID tồn tại trả về đúng sinh viên
+- ID không tồn tại in thông báo không tìm thấy
+- ID âm được xử lý an toàn
